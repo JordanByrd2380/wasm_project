@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; img-src https://*; child-src 'none';" />
+      content="img-src https://*; child-src 'none';"
+      extension-pages="script-src 'self' 'wasm-unsafe-eval'; object-src 'self';"/>
+      
     <title>Hello wasm-pack!</title>
   </head>
   <body>
