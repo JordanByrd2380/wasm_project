@@ -7,18 +7,28 @@ console.log(wasm.fib(3));
 
 
 
-function loadStringFromWebsite(url) {
+// function loadStringFromWebsite(url) {
 
-  return axios.get(url)
-    .then(response => {
+//   return axios.get(url)
+//     .then(response => {
       
-      wasm.log_to_console(response.data);
-      return response.data;
-    })
-    .catch(error => {
-      console.error('Error fetching data:', error);
-    });
-}
+//       wasm.log_to_console(response.data);
+//       return response.data;
+//     })
+//     .catch(error => {
+//       console.error('Error fetching data:', error);
+//     });
+// }
 
-let url = "https://code.jquery.com/jquery-3.7.0.js";
-loadStringFromWebsite(url);
+// let url = "https://code.jquery.com/jquery-3.7.0.js";
+// loadStringFromWebsite(url);
+
+
+
+
+
+WebAssembly.instantiateStreaming(fetch("wasm_game_of_life_bg.wasm"), {env: {}}).then(
+  (results) => {
+    // Do something with the results!
+  },
+);
